@@ -1,3 +1,6 @@
+/* Logo Font */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 /* Set up your color variable scheme */
 :root {
     --primary-color: #1d5888;
@@ -6,13 +9,18 @@
     --white-color: #dff3e4;
 }
 
-body {color: var(--dark-color);}
+body {
+    color: var(--dark-color);
+    background: #fffc00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 nav {background-color:var(--dark-color);}
 
 footer{background-color:var(--dark-color);}
 
-h1,h2,h3,h4,h5,h6 {color: var(--primary-color);}
+h1,h2,h3,h4,h5,h6 {color: red;}
 
 footer {
     padding-right: 1rem;
@@ -26,6 +34,10 @@ footer .social>a{
 footer .social>a:hover {
     opacity: 0.9;
     color: var(--secondary-color);
+}
+
+.logoFont{
+    font-family: 'Audiowide', cursive;
 }
 
 .bsicon{
@@ -44,7 +56,7 @@ footer .social>a:hover {
 }
 
 .checklist>li i {
-    color: var(--secondary-color);
+    color: red;
 }
 
 code[class*="language-"],
