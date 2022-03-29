@@ -3,7 +3,7 @@
 
 <head>
     <!-- Change 'App Name' for every project -->
-    <title>App Name: A Coding Project By Bruno Aviles</title>
+    <title>REWIND: A Coding Project By Bruno Aviles</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
     <!-- CSS Prism -->
     <link rel="stylesheet" href="/css/prism.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8a7b6b0a99.js" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
         <div class="container-fluid">
             <!-- Change 'APP NAME' to your brand name -->
-            <a class="navbar-brand" href="#"><img src="/img/favicon.ico" class="d-inline-block align-text-top" width="30" height="24"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="index.html"><span class="text-danger">&lt;&lt;REWIND</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="app.html">The App</a>
@@ -60,25 +60,71 @@
     <!-- MAIN -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5">
-            <h2 class="border-1 border-bottom border-dark mt-5">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark mt-5 logoFont">The Code</h2>
             <div class="row row-cols-1 row-cols-md-2">
                 <!-- Code Embedded -->
                 <div class="col-lg-8">
                     <!-- Insert App Project Code -->
                     <pre class="line-numbers">
                     <code class="language-javascript">
-                        // Call Hello World 
-                        function HelloWorld(){ 
-                            alert("hello world"); 
-                        }
+                        // Get the string from the page
+// controller function
+function getValue(){
+    
+    document.getElementById("alert").classList.add("invisible");
+    
+    let userString = document.getElementById("userString").value;  
+    let revString = reverseString(userString);
+    
+    displayString(revString);
+}
+
+// Reverse the string
+// logic function
+function reverseString(userString){
+
+    let revString = [];
+
+    // reverse a string using a for loop
+    for (let index = userString.length - 1 ; index >= 0; index--) {
+        revString += userString[index];        
+    }
+
+    return revString;
+}
+
+// Display the reversed string to the user
+// view function
+function displayString(revString){
+
+    if (/^[a-zA-z]+$/.test(revString)) {
+        // write to the page
+        document.getElementById("validation").innerHTML = `Well Done!`
+        document.getElementById("msg").innerHTML = `Your word reversed is: ${revString}`;
+        // show the alert box
+        document.getElementById("alert").classList.remove("invisible");
+    } else {
+        // write to the page
+        document.getElementById("validation").innerHTML = `Something Went Wrong`
+        document.getElementById("msg").innerHTML = `Please Type In One Word At A Time & ONLY Letters`;
+        // show alert box
+        document.getElementById("alert").classList.remove("invisible");
+    }
+}
                     </code>
                     </pre>
                 </div>
                 <!-- Description of Code -->
                 <div class="col-lg-4">
-                    <p>The Code is Structures in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p class="fw-bolder">The Code is structured in three functions:</p>
+                    <h5>getValue</h5>
+                    <p><span class="fw-bolder">getValue</span> function adds a Bootstrap class (invisible) to the element with an "id" name "alert". This will hide the visibility of the element. <span class="fw-bolder">getValue</span> accepts(gets) the user input from the page. It utilizes <span class="fw-bolder">getElementById</span> to pull the value from the page. It passes that value to the <span class="fw-bolder">reverseString</span> function. The function <span class="fw-bolder">reverseString</span> returns an array of values and passes that array to the <span class="fw-bolder">displayString</span> function.</p>
+
+                    <h5>reverseString</h5>
+                    <p><span class="fw-bolder">reverseString</span> takes in one parameter "userString". Variable (revString) is created to hold an empty array. A for loop is created to reconstruct the "userString" value and be stored in the (revString) variable.</p>
+
+                    <h5>displayString</h5>
+                    <p><span class="fw-bolder">displayString</span> takes in one parameter "revString". A conditonal is used to validate if "revString" contains all alphabetical characters. If "revString" contains any numbers or special characters, an error message will be injected to the HTML and displayed to the user. If the "revString" contains all alphabetical characters, a success message will be injected to the HTML and displayed to the user. The message will be displayed by removing the Bootstrap class (invisible) from the element with an "id" name of "alert".</p>
                 </div>
             </div>
         </div>
@@ -91,7 +137,7 @@
                 <!-- copyright -->
                 <div class="col d-flex align-items-center justify-content-center justify-content-md-start order-last order-sm-first text-light">
                     <div>
-                        <span class="text-muted">&copy;2022</span> Bruno Aviles | bruno.aviles@yahoo.com
+                        <span class="text-muted">&copy;2022</span> Bruno Aviles | <span class="text-danger">bruno.aviles@yahoo.com</span>
                     </div>
                 </div>
                 <!-- logo -->
