@@ -22,14 +22,23 @@ function reverseString(userString){
     }
 
     return revString;
-
 }
 
 // Display the reversed string to the user
 // view function
 function displayString(revString){
-    // write to the page
-    document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
-    // show the alert box
-    document.getElementById("alert").classList.remove("invisible");
+
+    if (/^[a-zA-z]+$/.test(revString)) {
+        // write to the page
+        document.getElementById("validation").innerHTML = `Well Done!`
+        document.getElementById("msg").innerHTML = `Your word reversed is: ${revString}`;
+        // show the alert box
+        document.getElementById("alert").classList.remove("invisible");
+    } else {
+        // write to the page
+        document.getElementById("validation").innerHTML = `Something Went Wrong`
+        document.getElementById("msg").innerHTML = `Please Type In One Word At A Time & ONLY Letters`;
+        // show alert box
+        document.getElementById("alert").classList.remove("invisible");
+    }
 }
