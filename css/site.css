@@ -4,7 +4,7 @@
 /* Set up your color variable scheme */
 :root {
     --primary-color: #1d5888;
-    --secondary-color: #ff993b;
+    --secondary-color: #ff0000;
     --dark-color: #292929;
     --white-color: #dff3e4;
 }
@@ -40,23 +40,8 @@ footer .social>a:hover {
     font-family: 'Audiowide', cursive;
 }
 
-.bsicon{
-    color: purple;
-}
-.jsicon{
-    color: yellow;
-}
-
-.html5icon{
-    color: orangered;
-}
-
-.cssicon {
-    color: blue;
-}
-
 .checklist>li i {
-    color: red;
+    color: var(--secondary-color);
 }
 
 code[class*="language-"],
@@ -65,7 +50,6 @@ code[class*="language-"],
         word-break: break-all;
         word-wrap: break-word;
 }
-
 
 main>.container {
     padding: 60px 15px 0;
